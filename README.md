@@ -7,6 +7,8 @@
 to permanently store your alias:  
 if you are using **zsh** then:  
 `echo -e "\nalias qnote='cd /path/to/your/script/directory; python main.py'" >> ~/.zshrc`  
+or if you need to specify python3  
+`echo -e "\nalias qnote='cd /path/to/your/script/directory; python3 main.py'" >> ~/.zshrc`  
 
 ## Commands list:  
 [date] = [[yyyy-mm-dd], today, tomorrow]  
