@@ -68,11 +68,6 @@ class Application:
 	def __init__(self):
 		self.createModel()
 
-	if "help" in params:
-			print("qnote -a [yyyy-mm-dd, today, tomorrow] \"Message\" -> to add \"note\" to a particular date.", end="")
-			print("qnote [yyyy-mm-dd, today, tomorrow] -> to retrieve notes for a particular date.")
-			exit()
-
 	def createModel(self):
 		self.populatedJson = JSONPopulator.read()
 		self.data = Data()
