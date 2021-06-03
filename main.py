@@ -95,6 +95,12 @@ class Application:
 					exit()
 				self.writeToDate(params)
 
+	def retrievePlans(self, planslist):
+		plans = []
+		for plan in planslist:
+			plans.append(plan.body)
+		return plans
+
 	def fetchByDate(self, params):
 		searchDate = params[0]
 		for datestamp in self.data.datestamps:
