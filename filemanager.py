@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 class JSONPopulator:
 		
@@ -25,7 +26,14 @@ class JSONPopulator:
 
 	@staticmethod
 	def read():
-		path = os.getcwd() + "\\calendar.json"
+		path = ""
+		if sys.platform.startswith('win'):
+			path = os.path.normpath(os.getcwd()) + '\\calendar.json'
+		elif sys.platform.startswith('darwin'):
+			path = os.path.normpath(os.getcwd()) + '/calendar.json'
+		elif sys.platform.startswith('linux'):
+			path = os.path.normpath(os.getcwd()) + '/calendar.json'
+
 		mode = 'r' if os.path.exists(path) else 'w'
 		with open("calendar.json", f"{mode}") as f:
 			try:
