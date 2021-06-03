@@ -68,6 +68,11 @@ class Application:
 	def __init__(self):
 		self.createModel()
 
+	if "help" in params:
+			print("qnote -a [yyyy-mm-dd, today, tomorrow] \"Message\" -> to add \"note\" to a particular date.", end="")
+			print("qnote [yyyy-mm-dd, today, tomorrow] -> to retrieve notes for a particular date.")
+			exit()
+
 	def createModel(self):
 		self.populatedJson = JSONPopulator.read()
 		self.data = Data()
@@ -79,11 +84,6 @@ class Application:
 			self.data.addDatestamp(dateContent)
 
 	def start(self, flags=[], params=[]):
-
-		if "help" in params:
-			print("qnote -a [yyyy-mm-dd, today, tomorrow] \"Message\" -> to add \"note\" to a particular date.", end="")
-			print("qnote [yyyy-mm-dd, today, tomorrow] -> to retrieve notes for a particular date.")
-			exit()
 
 		if len(flags) == 0:
 			result = self.fetchByDate(params)
@@ -99,12 +99,6 @@ class Application:
 					print("Usage: qnote -a [date (yyyy-mm-dd), today, tomorrow] \"Message\" ")
 					exit()
 				self.writeToDate(params)
-
-	def retrievePlans(self, planslist):
-		plans = []
-		for plan in planslist:
-			plans.append(plan.body)
-		return plans
 
 	def fetchByDate(self, params):
 		searchDate = params[0]
