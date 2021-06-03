@@ -4,7 +4,12 @@
 `alias qnote="python main.py"` if you consider using it only in your script directory.  
 `alias qnote='cd /your/path/to/script/directory; python main.py'` if you want to use it from anywhere.  
 
-todo: alias qnote forever. Your job is to find out how to alias something forever in your terminal/cmd
+to permanently store your alias:  
+go to script directory  
+if you are using **zsh** then:  
+`echo -e "\nalias qnote='cd /path/to/your/script/directory; python main.py'" >> ~/.zshrc`  
+if you are using **bash** then:
+`echo -e "\nalias qnote='cd /path/to/your/script/directory; python main.py'" >> .bashrc`
 
 ## Commands list:  
 [date] = [[yyyy-mm-dd], today, tomorrow]  
